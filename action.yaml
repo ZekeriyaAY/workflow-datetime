@@ -8,11 +8,10 @@ inputs:
   #   description: 'The name of the section to be updated in the Markdown'
   #   required: false
   #   default: 'default'
-  # NOT YET DEVELOPED  
-  # markdown_path:
-  #   description: 'Path to Markdown file'
-  #   required: false
-  #   default: './README.md'
+  markdown_path:
+    description: 'Path to Markdown file'
+    required: false
+    default: 'README.md'
   date_format:
     description: 'Allows you to change the format of the date or time displayed'
     required: false
@@ -21,8 +20,8 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - name: 'Take Date'
-      run: date ${{ inputs.date_format }}
+    - name: 'Print date to Markdown file'
+      run: date ${{ inputs.date_format }} > ${{ inputs.markdown_file }}
       shell: bash
 
 branding:
