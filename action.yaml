@@ -8,7 +8,7 @@ inputs:
   #   description: 'The name of the section to be updated in the Markdown'
   #   required: false
   #   default: 'default'
-  markdown_path:
+  markdown_file:
     description: 'Path to Markdown file'
     required: false
     default: 'README.md'
