@@ -21,7 +21,8 @@ runs:
   using: 'composite'
   steps:
     - name: 'Print date to Markdown file'
-      run: date ${{ inputs.date_format }} > ${{ inputs.markdown_file }}
+      run: |
+        date ${{ inputs.date_format }} > ${{ inputs.markdown_file }}
       shell: bash
 
 branding:
