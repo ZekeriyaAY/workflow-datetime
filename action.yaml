@@ -3,25 +3,26 @@ author: 'Zekeriya AY <zekeriya@zekeriyaay.com>'
 description: 'Print date of last running Workflow to Markdown'
 
 inputs:
-  section:
-    description: 'The name of the section to be updated in the Markdown'
-    required: false
-    default: 'test'
-  markdown_path:
-    description: 'Path to Markdown file'
-    required: false
-    default: './README.md'
-  # NOT YET DEVELOPED    
-  # date_format:
-  #   description: 'Allows you to change the format of the date or time displayed'
+  # NOT YET DEVELOPED  
+  # section:
+  #   description: 'The name of the section to be updated in the Markdown'
   #   required: false
-  #   default: ''
+  #   default: 'default'
+  # NOT YET DEVELOPED  
+  # markdown_path:
+  #   description: 'Path to Markdown file'
+  #   required: false
+  #   default: './README.md'
+  date_format:
+    description: 'Allows you to change the format of the date or time displayed'
+    required: false
+    default: '+"%a  %d %b %Y  %H:%M:%S %Z" -u'
 
 runs:
   using: 'composite'
   steps:
-    - name: 'Adımın Adı'
-      run: $GITHUB_ACTION_PATH/script.sh
+    - name: 'Take Date'
+      run: date ${{ inputs.date_format }}
       shell: bash
 
 branding:
