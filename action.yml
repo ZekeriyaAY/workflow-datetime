@@ -37,7 +37,7 @@ inputs:
   commit_message:
     description: 'Commit message'
     required: false
-    default: '🚀 Workflow Date Updated'
+    default: '🚀 Datetime of Workflow Updated'
 
 runs:
   using: 'composite'
