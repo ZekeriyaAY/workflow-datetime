@@ -7,14 +7,30 @@ inputs:
     description: 'Allows you to change the format of the date or time displayed'
     required: false
     default: '%a  %d %b %Y  %H:%M:%S%Z'
-  section:
-    description: 'The name of the section to be updated in the Markdown'
+  tag:
+    description: 'The name of the tag to be updated in the Markdown'
     required: false
-    default: 'DEFAULT-SECTION'
+    default: 'DEFAULT-TAG'
   markdown_path:
     description: 'Path to Markdown file'
     required: false
     default: './README.md'
+  commit_branch:
+    description: 'Destination branch to push changes'
+    required: false
+    default: 'main'
+  commit_username:
+    description: 'Username of the user to commit. If nothing is written, the GitHub Bot is used'
+    required: false
+    default: 'github-actions[bot]'
+  commit_email:
+    description: 'Email of the user to commit. If nothing is written, the GitHub Bot is used'
+    required: false
+    default: 'github-actions[bot]@users.noreply.github.com'
+  commit_message:
+    description: 'Commit message'
+    required: false
+    default: '🚀 Workflow Date Updated'
 
 runs:
   using: 'composite'
@@ -25,9 +41,17 @@ runs:
         python-version: '3.x'
     - name: 'Execute Python Script'
       run: |
-        python3 $GITHUB_ACTION_PATH/script.py --format '${{ inputs.date_format }}' --section ${{ inputs.section }} --path ${{ inputs.markdown_path }}
+        python3 $GITHUB_ACTION_PATH/script.py --format '${{ inputs.date_format }}' --tag ${{ inputs.tag }} --path ${{ inputs.markdown_path }}
       shell: bash
+    - name: 'GitHub Commit & Push'
+      uses: actions-js/push@v1.3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        author_name: ${{ inputs.commit_username }}
+        author_email: ${{ inputs.commit_email }}
+        branch: ${{ inputs.commit_branch }}
+        message: ${{ inputs.commit_message }}
 
 branding:
-  icon: 'clock'
-  color: 'red'
+  icon: 'calendar'
+  color: 'yellow'
