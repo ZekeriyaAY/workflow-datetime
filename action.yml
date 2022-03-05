@@ -1,6 +1,6 @@
-name: 'Date of Running Workflow'
+name: 'Datetime of Workflow'
 author: 'Zekeriya AY'
-description: 'Print date of last running Workflow to Markdown'
+description: "Allows you show the datetime of workflow on your GitHub profile or project's README"
 
 inputs:
   github_token:
