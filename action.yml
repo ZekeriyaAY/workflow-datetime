@@ -46,6 +46,9 @@ runs:
       uses: actions/setup-python@v3
       with:
         python-version: '3.x'
+    - name: 'Install Dependencies'
+      run: |
+        python3 -m pip install -r requirements.txt
     - name: 'Execute Python Script'
       run: |
         python3 $GITHUB_ACTION_PATH/script.py --format '${{ inputs.date_format }}' --tag ${{ inputs.tag }} --path ${{ inputs.markdown_path }} --timezone '${{ inputs.timezone }}'
