@@ -25,7 +25,7 @@ inputs:
   commit_branch:
     description: 'Destination branch to push changes'
     required: false
-    default: '${{ github.ref_name }}'
+    default: 'main'
   commit_username:
     description: 'Username of the user to commit. If nothing is written, the GitHub Bot is used'
     required: false
