@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - dev
     workflow_dispatch: # Run workflow manually (without waiting for the cron to be called), through the Github Actions Workflow page directly
 
 jobs:
@@ -21,7 +22,7 @@ jobs:
           # timezone: 'UTC'
           # tag: 'DEFAULT-TAG'
           # markdown_path: './README.md'
-          # commit_branch: 'main'
+          # commit_branch: '${{ github.ref }}'
           # commit_username: 'github-actions[bot]'
           # commit_email: 'github-actions[bot]@users.noreply.github.com'
           # commit_message: '🚀 Datetime of Workflow Updated'
