@@ -18,6 +18,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # date_format: '%a  %d %b %Y  %H:%M:%S%Z'
+          # timezone: 'UTC'
           # tag: 'DEFAULT-TAG'
           # markdown_path: './README.md'
           # commit_branch: 'main'

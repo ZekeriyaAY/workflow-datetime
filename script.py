@@ -1,15 +1,17 @@
 import argparse
 from datetime import datetime
+from pytz import timezone
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--format', type=str, required=True, help='Date format')
 parser.add_argument('--tag', type=str, required=True, help='Tag name')
 parser.add_argument('--path', type=str, required=True,
                     help='Markdown file path')
+parser.add_argument('--timezone', type=str, required=True, help='Timezone')
 
 args = parser.parse_args()
 
-now = datetime.now()
+now = datetime.now(timezone(args.timezone)) # https://gist.github.com/heyalexej/8bf688fd67d7199be4a1682b3eec7568#file-pytz-time-zones-py
 now = now.strftime(args.format)  # https://strftime.org/
 
 with open(args.path, 'r') as md_file:

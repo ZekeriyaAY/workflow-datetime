@@ -9,7 +9,11 @@ inputs:
   date_format:
     description: 'Allows you to change the format of the date or time displayed'
     required: false
-    default: '%a  %d %b %Y  %H:%M:%S%Z'
+    default: '%a  %d %b %Y  %H:%M:%S %Z'
+  timezone:
+    description: 'Timezone Region'
+    required: false
+    default: 'UTC'
   tag:
     description: 'The name of the tag to be updated in the Markdown'
     required: false
@@ -44,7 +48,7 @@ runs:
         python-version: '3.x'
     - name: 'Execute Python Script'
       run: |
-        python3 $GITHUB_ACTION_PATH/script.py --format '${{ inputs.date_format }}' --tag ${{ inputs.tag }} --path ${{ inputs.markdown_path }}
+        python3 $GITHUB_ACTION_PATH/script.py --format '${{ inputs.date_format }}' --tag ${{ inputs.tag }} --path ${{ inputs.markdown_path }} --timezone '${{ inputs.timezone }}'
       shell: bash
     - name: 'GitHub Commit & Push'
       uses: actions-js/push@v1.3
