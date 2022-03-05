@@ -15,7 +15,8 @@ jobs:
 
       - name: Update Workflow Date
         uses: ZekeriyaAY/workflow-date@main
-        # with:
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           # date_format: '%a  %d %b %Y  %H:%M:%S%Z'
           # tag: 'DEFAULT-TAG'
           # markdown_path: './README.md'

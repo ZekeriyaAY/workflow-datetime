@@ -3,6 +3,9 @@ author: 'Zekeriya AY'
 description: 'Print date of last running Workflow to Markdown'
 
 inputs:
+  github_token:
+    description: 'Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }}'
+    required: true
   date_format:
     description: 'Allows you to change the format of the date or time displayed'
     required: false
@@ -46,7 +49,7 @@ runs:
     - name: 'GitHub Commit & Push'
       uses: actions-js/push@v1.3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ inputs.github_token }}
         author_name: ${{ inputs.commit_username }}
         author_email: ${{ inputs.commit_email }}
         branch: ${{ inputs.commit_branch }}
