@@ -7,10 +7,10 @@ inputs:
     description: 'Allows you to change the format of the date or time displayed'
     required: false
     default: '%a  %d %b %Y  %H:%M:%S%Z'
-  section:
-    description: 'The name of the section to be updated in the Markdown'
+  tag:
+    description: 'The name of the tag to be updated in the Markdown'
     required: false
-    default: 'DEFAULT-SECTION'
+    default: 'DEFAULT-TAG'
   markdown_path:
     description: 'Path to Markdown file'
     required: false
@@ -25,7 +25,7 @@ runs:
         python-version: '3.x'
     - name: 'Execute Python Script'
       run: |
-        python3 $GITHUB_ACTION_PATH/script.py --format '${{ inputs.date_format }}' --section ${{ inputs.section }} --path ${{ inputs.markdown_path }}
+        python3 $GITHUB_ACTION_PATH/script.py --format '${{ inputs.date_format }}' --tag ${{ inputs.tag }} --path ${{ inputs.markdown_path }}
       shell: bash
 
 branding:
