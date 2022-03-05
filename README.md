@@ -8,7 +8,6 @@ Sat  05 Mar 2022  21:51:41 +03
 
 ![preview](/example.png)
 
-<br>
 
 ## 📝 How to use
 1. Star this repo 😉 
