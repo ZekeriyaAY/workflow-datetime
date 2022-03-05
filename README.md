@@ -4,8 +4,6 @@
 Sat  05 Mar 2022  21:43:06 UTC
 <!-- DEFAULT-TAG:END -->
 
-<br>
-
 ![preview](/example.png)
 
 
