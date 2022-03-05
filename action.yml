@@ -1,0 +1,33 @@
+name: 'Date of Running Workflow'
+author: 'Zekeriya AY'
+description: 'Print date of last running Workflow to Markdown'
+
+inputs:
+  date_format:
+    description: 'Allows you to change the format of the date or time displayed'
+    required: false
+    default: '%a  %d %b %Y  %H:%M:%S%Z'
+  section:
+    description: 'The name of the section to be updated in the Markdown'
+    required: false
+    default: 'DEFAULT-SECTION'
+  markdown_path:
+    description: 'Path to Markdown file'
+    required: false
+    default: './README.md'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: 'Setup Python'
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.x'
+    - name: 'Execute Python Script'
+      run: |
+        python3 $GITHUB_ACTION_PATH/script.py --format '${{ inputs.date_format }}' --section ${{ inputs.section }} --path ${{ inputs.markdown_path }}
+      shell: bash
+
+branding:
+  icon: 'clock'
+  color: 'red'
