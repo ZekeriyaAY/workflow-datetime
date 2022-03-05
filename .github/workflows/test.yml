@@ -1,4 +1,4 @@
-name: Workflow Date
+name: Datetime of Workflow
 on:
   push:
     branches:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   workflow-date:
-    name: Update this repo's README with last update time
+    name: Update the datetime of workflow in the README
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
