@@ -34,7 +34,7 @@ Thu  05 May 2022  14:39:59 UTC
             uses: actions/checkout@v3
 
           - name: Update with Datetime of Workflow
-            uses: ZekeriyaAY/workflow-date@v1
+            uses: ZekeriyaAY/workflow-date@main
             with:
               github_token: ${{ secrets.GITHUB_TOKEN }}
               # date_format: '%a  %d %b %Y  %H:%M:%S%Z'
