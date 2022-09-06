@@ -4,8 +4,6 @@
 Tue  06 Sep 2022  12:11:41 UTC
 <!-- DEFAULT-TAG:END -->
 
-<br>
-
 ![preview](/example.png)
 
 
@@ -36,7 +34,7 @@ Tue  06 Sep 2022  12:11:41 UTC
             uses: actions/checkout@v3
 
           - name: Update with Datetime of Workflow
-            uses: ZekeriyaAY/workflow-date@v1
+            uses: ZekeriyaAY/workflow-date@main
             with:
               github_token: ${{ secrets.GITHUB_TOKEN }}
               # date_format: '%a  %d %b %Y  %H:%M:%S%Z'
@@ -51,7 +49,6 @@ Tue  06 Sep 2022  12:11:41 UTC
 1. Update the above input parameters with your own information. See [options](#options) for a list of input parameters.
 1. Commit and wait for it to run automatically or you can also trigger it manually to see the result instantly.
 
-<br>
 
 ## 🔧 Options
 This workflow has additional options that you can use to customize it for your use case. The following are the list of options available:
@@ -68,13 +65,11 @@ This workflow has additional options that you can use to customize it for your u
 | `commit_email` | `github-actions[bot]@users.noreply.github.com` | Email of the user to commit | No |
 | `commit_message` | `🚀 Datetime of Workflow Updated` | Commit message | No |
 
-<br>
 
 ### 🚀 Examples 
 * [This README](https://github.com/ZekeriyaAY/workflow-datetime/blob/main/README.md) - [YML File](https://github.com/ZekeriyaAY/workflow-datetime/blob/main/.github/workflows/example-workflow-datetime.yml)
 * [My own GitHub profile readme](https://github.com/ZekeriyaAY) - [YML File](https://github.com/ZekeriyaAY/ZekeriyaAY/blob/main/.github/workflows/workflow-datetime.yml)
 
-<br>
 
 ## 🚧 Contributing
 Please see [CONTRIBUTING.md](/CONTRIBUTING.md) for getting started with the contribution. 
@@ -83,7 +78,6 @@ Make sure that you follow [CODE_OF_CONDUCT.md](/CODE_OF_CONDUCT.md) while contri
 
 **When contributing, please first discuss the change you wish to make via an issue on this repository before making the actual change**.
 
-<br>
 
 ## 🐛 Bugs
 If you are experiencing any bugs, don’t forget to open a [new issue](https://github.com/ZekeriyaAY/workflow-datetime/issues/new/choose).
