@@ -5,7 +5,7 @@ on:
       - main
     workflow_dispatch: # Run workflow manually (without waiting for the cron to be called), through the Github Actions Workflow page directly
     schedule: # Run workflow automatically
-      - cron: '0 0 * * *'
+      - cron: '0 0 * * *' # Every day at 00:00
 
 jobs:
   workflow-datetime:
