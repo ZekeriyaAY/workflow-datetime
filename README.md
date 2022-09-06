@@ -68,7 +68,8 @@ This workflow has additional options that you can use to customize it for your u
 
 ### 🚀 Examples 
 * [This README](https://github.com/ZekeriyaAY/workflow-datetime/blob/main/README.md) - [YML File](https://github.com/ZekeriyaAY/workflow-datetime/blob/main/.github/workflows/example-workflow-datetime.yml)
-* [My own GitHub profile readme](https://github.com/ZekeriyaAY) - [YML File](https://github.com/ZekeriyaAY/ZekeriyaAY/blob/main/.github/workflows/workflow-datetime.yml)
+* [My own GitHub profile readme](https://github.com/ZekeriyaAY) - [YML File](https://github.com/ZekeriyaAY/ZekeriyaAY/blob/main/.github/workflows/latest-x-workflow.yml)
+* [My portfolio website](https://zekeriyaay.com) - [YML File](https://github.com/ZekeriyaAY/zekeriyaay.com/blob/mainResearcher/.github/workflows/researcher-gh-pages.yml)
 
 
 ## 🚧 Contributing
